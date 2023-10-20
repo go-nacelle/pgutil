@@ -60,5 +60,41 @@ func (m ColumnModifier) AlterExisting(existingSchema SchemaDescription, existing
 	// IsGenerated            bool
 	// GenerationExpression   string
 
+	// statements := []string{}
+
+	// if d.TypeName != target.TypeName {
+	// 	statements = append(statements, fmt.Sprintf("ALTER TABLE %s ALTER COLUMN %s SET DATA TYPE %s;", table.Name, target.Name, target.TypeName))
+
+	// 	// Remove from diff below
+	// 	d.TypeName = target.TypeName
+	// }
+	// if d.IsNullable != target.IsNullable {
+	// 	var verb string
+	// 	if target.IsNullable {
+	// 		verb = "DROP"
+	// 	} else {
+	// 		verb = "SET"
+	// 	}
+
+	// 	statements = append(statements, fmt.Sprintf("ALTER TABLE %s ALTER COLUMN %s %s NOT NULL;", table.Name, target.Name, verb))
+
+	// 	// Remove from diff below
+	// 	d.IsNullable = target.IsNullable
+	// }
+	// if d.Default != target.Default {
+	// 	if target.Default == "" {
+	// 		statements = append(statements, fmt.Sprintf("ALTER TABLE %s ALTER COLUMN %s DROP DEFAULT;", table.Name, target.Name))
+	// 	} else {
+	// 		statements = append(statements, fmt.Sprintf("ALTER TABLE %s ALTER COLUMN %s SET DEFAULT %s;", table.Name, target.Name, target.Default))
+	// 	}
+
+	// 	// Remove from diff below
+	// 	d.Default = target.Default
+	// }
+
+	// // Abort if there are other fields we haven't addressed
+	// hasAdditionalDiff := cmp.Diff(d, target) != ""
+	// return statements, !hasAdditionalDiff
+
 	return nil, false
 }
